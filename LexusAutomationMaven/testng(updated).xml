@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" thread-count="1" parallel="classes">
+<test  name="LexusTest">
+<parameter name ="browser" value="Chrome">></parameter>
+<classes>
+<class name="TestNg.TestNgClass1"/>
+</classes>
+</test> <!-- Chrome Driver Test -->
+ 
+<test name="FireFoxBrowserTest">
+<parameter name="browser" value="Firefox"></parameter>
+<classes>
+<class name="TestNg.TestNgClass1"/>
+</classes>
+</test><!-- FireFox Driver Test -->
+
+<test name="OperaBrowserTest">
+<parameter name="browser" value="Opera"></parameter>
+<classes>
+<class name="TestNg.TestNgClass1"/>
+</classes>
+</test><!-- Opera Driver Test -->
+
+<test name="Microsoft Edge Test">
+<parameter name="browser" value="MicrosoftE"></parameter>
+<classes>
+<class name="TestNg.TestNgClass1"/>
+</classes>
+</test><!-- Microsoft Edge Test -->
+</suite> <!-- Suite -->

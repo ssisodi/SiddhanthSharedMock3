@@ -4,8 +4,18 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import LexusPomClasses.AccessoriesPage;
@@ -14,16 +24,51 @@ import LexusPomClasses.InteriorColorPage;
 
 public class TestNgClass2 {
 
-	
 	WebDriver driver;
 	
+	@BeforeSuite
+	public void beforeSuite()
+	{
+		System.out.println("Before Suite");
+	}
+	@Parameters("browser")
+	@BeforeTest
+	public void openBrowser(String browserName)
+	{
+	
+		if(browserName.equals("Chrome"))
+		{
+			System.setProperty("webdriver.chrome.driver","G:\\My Drive\\HP Pavillion Backup\\Documents\\Notes-VCT\\chromedriver_win32\\chromedriver.exe");
+			driver = new ChromeDriver();
+		}
+		if(browserName.equals("Firefox"))
+		{
+			System.setProperty("webdriver.gecko.driver","G:\\My Drive\\HP Pavillion Backup\\Documents\\Notes-VCT\\geckodriver-v0.32.1-win32\\geckodriver.exe");
+			driver = new FirefoxDriver();
+		}
+		if(browserName.equals("Opera"))
+		{
+			System.setProperty("webdriver.opera.driver","G:\\My Drive\\HP Pavillion Backup\\Documents\\Notes-VCT\\operadriver_win32\\operadriver_win32\\operadriver.exe");
+			driver = new OperaDriver();
+		}
+		if(browserName.equals("MicrosoftE"))
+		{
+			System.setProperty("webdriver.edge.driver","G:\\My Drive\\HP Pavillion Backup\\Documents\\Notes-VCT\\edgedriver_win64\\msedgedriver.exe");
+			driver = new EdgeDriver();
+		}
+		
+		System.out.println("Before test");
+	}
+	
+
 	@BeforeClass
 	public void defaultDriver() {
-		
-	System.setProperty("webdriver.chrome.driver","C:\\Users\\SID9T\\OneDrive\\Documents\\Notes-VCT\\chromedriver_win32\\chromedriver.exe");
-	driver = new ChromeDriver(); 	
-	driver.get("https://www.lexus.com/build-your-lexus/#!/zip/91801/series/UXh/year/2023/trim/9735/buildId/102");
-	driver.manage().window().maximize();	
+	/*System.setProperty("webdriver.chrome.driver","C:\\Users\\SID9T\\OneDrive\\Documents\\Notes-VCT\\chromedriver_win32\\chromedriver.exe");
+	driver = new ChromeDriver();	*/
+/*	System.setProperty("webdriver.gecko.driver","C:\\Users\\SID9T\\OneDrive\\Documents\\Notes-VCT\\geckodriver.exe");
+	driver = new FirefoxDriver();*/
+		driver.get("https://www.lexus.com/build-your-lexus/#!/zip/91801/series/UXh/year/2023/trim/9735/buildId/102");
+	driver.manage().window().maximize();
 	}
 	
 	@BeforeMethod
@@ -222,4 +267,30 @@ public class TestNgClass2 {
 				
 			}
 		}	
+
+		@AfterMethod
+		public void afterMethod()
+		{
+			System.out.println("After Method");
+		}
+		
+		@AfterClass
+		public void afterclass()
+		{
+			System.out.println("After Class");
+		}
+
+		@AfterTest
+		public void afterTest()
+		{
+			driver.quit();
+			System.out.println("After test");
+		}
+		
+		@AfterSuite
+		public void afterSuite()
+		{
+			System.out.println("After suite for TestNg Class 1 ");
+		}
+
 }
