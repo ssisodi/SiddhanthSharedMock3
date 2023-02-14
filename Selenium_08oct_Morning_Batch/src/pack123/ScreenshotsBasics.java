@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 
-public class Screenshots {
+public class ScreenshotsBasics {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\SID9T\\OneDrive\\Documents\\Notes-VCT\\chromedriver_win32\\chromedriver.exe");
@@ -25,10 +25,9 @@ public class Screenshots {
 // How to capture the screenshot in selenium 
 		
 		TakesScreenshot t = (TakesScreenshot)driver; 
-/*Line19: Chromedriver is upcasted in to TakesScreenshot. 
+/*Line18: Chromedriver is upcasted in to TakesScreenshot(Line 27)
  * Meaning the reference of chromedriver that is 'driver' is 
- * written with casting operator(TakesScreenshot) and then 
- * store it in 't'. */		
+ * written with casting operator(TakesScreenshot) and then store it in 't'. */		
 
 //Step - 1		
 		File src = t.getScreenshotAs(OutputType.FILE);
