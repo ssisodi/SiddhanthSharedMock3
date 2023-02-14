@@ -481,7 +481,7 @@ public class TestNgClass1 extends Browser{
 			String expmatch6 = "HEATED STEERING WHEEL"; 
 			Assert.assertEquals(actmatch6, expmatch6, "Cannot add this Item 6 & 7");
 			accessories.add6thItem();
-			System.out.println("Item 6 & 7 got added");
+			System.out.println("Item 6 & 7 got added two items");
 			/*
 			if(actmatch6.equals(expmatch6))
 			{
@@ -599,15 +599,17 @@ public class TestNgClass1 extends Browser{
 /*
 For TestNg paste this in Test suite for multiple browsers
 
-<class name="TestNg.TestNgClass2"/>
-
-
+<test  name="LexusTest">
+<parameter name ="browser" value="Chrome">></parameter>
+<classes>
+<class name="TestNg.TestNgClass1"/>
+</classes>
+</test> <!-- Chrome Driver Test -->
 
 <test name="FireFoxBrowserTest">
 <parameter name="browser" value="Firefox"></parameter>
 <classes>
 <class name="TestNg.TestNgClass1"/>
-<class name="TestNg.TestNgClass2"/>
 </classes>
 </test><!-- FireFox Driver Test -->
 
