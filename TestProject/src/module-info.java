@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author siddr
- *
- */
-module TestProject {
-}
