@@ -591,7 +591,7 @@ public class TestNgClass1 extends Browser{
 	@AfterSuite
 	public void afterSuite()
 	{
-		System.out.println("After suite for TestNgClass-1 ");
+		System.out.println("After suite for TestNgClass1 ");
 	}
 
 }
