@@ -21,7 +21,7 @@ public class Collection {
 	a.add(7.756); 
 	a.add('g'); 
 	
-	//Deletion
+	//Deletion of the specific item
 	a.remove(2); 
 		
 	
