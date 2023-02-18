@@ -27,7 +27,7 @@ public class Collection {
 	
 	for (int i = 0 ; i<a.size();i++)
 	{
-		System.out.println(a.get(i)); // Data retrieval 
+		System.out.println(a.get(i)); // Data retrieval for arraylist
 	}
 	System.out.println("===========================");
 	  
