@@ -112,8 +112,6 @@ public class Barclays {
 		Thread.sleep(2000);
 		
 		js.executeScript("window.scrollBy(0,1800)");
-		
-		
-		
+			
 	}
 }
