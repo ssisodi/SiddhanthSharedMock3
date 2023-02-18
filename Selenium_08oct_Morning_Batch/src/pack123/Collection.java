@@ -7,7 +7,7 @@ public class Collection {
 	public static void main(String args[]) {
 		
 
-	/*Here we will be performing 3 Operations of collections
+	/*Here we will be performing only 3 Operations of collections
 	 * 1. Insertion 
 	 * 2. Retrieval
 	 * 3. Deletion*/
