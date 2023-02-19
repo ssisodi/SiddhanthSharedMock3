@@ -52,9 +52,9 @@ public class AccessoriesPage {
 	private WebElement addItem6; 
 	
 	@FindBy(xpath = "(//footer[@class = 'conflict-foot'])[1]")
-	private WebElement footerDriver;
-	
-	@FindBy(xpath = "//a[contains(text(),'Confirm')]")
+	private WebElement footerDriver;////a[contains(text(),'Confirm')]
+	//
+	@FindBy(xpath = "(//footer[@class = 'conflict-foot']//a)[2]")
 	private WebElement addItem7; 
 	
 	//WINDSHIELD WIPER DE-ICER
@@ -133,7 +133,8 @@ public class AccessoriesPage {
 	public void add6thItem()
 	{
 		addItem6.click();
-		act.moveToElement(footerDriver).moveToElement(addItem7).click().build().perform();
+		act.moveToElement(footerDriver).perform();
+		act.moveToElement(addItem7).click().perform();
 	}
 	
 	
